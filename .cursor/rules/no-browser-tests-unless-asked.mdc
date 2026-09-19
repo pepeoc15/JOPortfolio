@@ -1,0 +1,13 @@
+---
+description: No browser testing unless Jose explicitly asks
+alwaysApply: true
+---
+
+# Pruebas en el navegador
+
+No hagas pruebas en el navegador salvo que Jose lo pida de forma explícita en ese mensaje.
+
+- No abras la app en el navegador, no uses computerUse / RecordScreen / walkthroughs visuales, ni “verifica el flujo como un usuario” por tu cuenta.
+- Un build (`npm run build`) o un cambio de código no implica probarlo en el navegador.
+- Si hace falta comprobar algo sin navegador, usa la terminal (`npm run build`, curl al HTML, tests de código). Eso no cuenta como prueba en navegador.
+- Al **final** de la respuesta sí puedes recordarle, en una línea, si quiere que hagas pruebas en el navegador. No las lances hasta que conteste que sí.
