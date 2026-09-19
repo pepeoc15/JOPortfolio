@@ -1,0 +1,15 @@
+---
+description: All JOPortfolio code changes go on cursor/devcursor only
+alwaysApply: true
+---
+
+# Working branch
+
+JOPortfolio uses a single shared branch. Jose will not run parallel agents that overwrite each other.
+
+- Do all code edits, commits, and pushes on `cursor/devcursor`.
+- Do not create a new feature branch or a new pull request for routine work.
+- Before editing: `git fetch origin` and `git checkout cursor/devcursor`, then `git pull --rebase origin cursor/devcursor`.
+- If this session booted on another branch, switch to `cursor/devcursor` and continue there. If the local branch does not exist, create it to track `origin/cursor/devcursor`.
+- Push to `origin/cursor/devcursor`. Update an existing PR for that branch only if one already exists and the user asked; do not open extra PRs.
+- `main` is not the working branch until Jose says otherwise.
