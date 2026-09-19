@@ -4,23 +4,18 @@ import { computed } from 'vue'
 import { useTheme } from '@/composables/useTheme.js'
 import { timeline } from '@/data/timeline.js'
 
-import PhotoSlot from './PhotoSlot.vue'
 import TimelineBlock from './TimelineBlock.vue'
 
 const { themeId } = useTheme()
 
-const useTimelineRail = computed(() => themeId.value === 'profesional')
+const themesWithTimelineRail = ['profesional', 'consultora', 'compacto']
+
+const useTimelineRail = computed(() => themesWithTimelineRail.includes(themeId.value))
 </script>
 
 <template>
   <section class="app-hero" :class="[`app-hero--${themeId}`]" aria-labelledby="hero-title">
     <header class="app-hero__intro">
-      <PhotoSlot
-        v-if="themeId === 'fotografico'"
-        photo-key="portrait"
-        variant="round"
-        class="app-hero__portrait"
-      />
       <h1 id="hero-title" class="app-hero__title">Trayectoria profesional</h1>
       <p class="app-hero__lead">
         Biografía cronológica a partir del inventario de formación y experiencia. Informance en
@@ -45,7 +40,7 @@ const useTimelineRail = computed(() => themeId.value === 'profesional')
 
 .app-hero__title {
   margin: 0 0 0.5rem;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: var(--jo-hero-title-size, clamp(1.5rem, 4vw, 2.25rem));
   font-weight: inherit;
   letter-spacing: -0.03em;
   line-height: 1.15;

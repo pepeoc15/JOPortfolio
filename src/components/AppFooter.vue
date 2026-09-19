@@ -1,21 +1,10 @@
 <script setup>
-import { useTheme } from '@/composables/useTheme.js'
-
-import PhotoSlot from './PhotoSlot.vue'
-
 const year = new Date().getFullYear()
-const { themeId } = useTheme()
 </script>
 
 <template>
   <footer class="app-footer">
     <div class="app-footer__inner">
-      <PhotoSlot
-        v-if="themeId === 'fotografico'"
-        photo-key="portrait"
-        variant="thumb"
-        class="app-footer__photo"
-      />
       <p class="app-footer__copy">
         © {{ year }} Jose Osuna. Inventario completo en datos; en público se puede ocultar sin
         borrar.

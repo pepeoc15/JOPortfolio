@@ -8,24 +8,24 @@ export const themes = [
     description: 'Claro, ordenado y corporativo',
   },
   {
-    id: 'developer',
-    label: 'Developer',
-    description: 'Oscuro, monospace y terminal',
+    id: 'consultora',
+    label: 'Consultora',
+    description: 'Azul marino, conservador y denso',
   },
   {
-    id: 'editorial',
-    label: 'Editorial',
-    description: 'Revista, columnas y titulares',
+    id: 'luminoso',
+    label: 'Luminoso',
+    description: 'Más aire, lectura amplia y serena',
   },
   {
-    id: 'fotografico',
-    label: 'Fotográfico',
-    description: 'La imagen guía el relato',
+    id: 'papel',
+    label: 'Papel cálido',
+    description: 'Crema y tonos papel, sobrio',
   },
   {
-    id: 'tipografico',
-    label: 'Tipográfico',
-    description: 'Mínimo color, máximo tipo',
+    id: 'compacto',
+    label: 'Compacto',
+    description: 'Alta densidad, más información por pantalla',
   },
 ]
 
