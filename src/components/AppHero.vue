@@ -1,39 +1,40 @@
 <script setup>
-import Timeline from 'primevue/timeline'
+import { computed } from 'vue'
 
+import { useTheme } from '@/composables/useTheme.js'
 import { timeline } from '@/data/timeline.js'
+
+import PhotoSlot from './PhotoSlot.vue'
+import TimelineBlock from './TimelineBlock.vue'
+
+const { themeId } = useTheme()
+
+const useTimelineRail = computed(() => themeId.value === 'profesional')
 </script>
 
 <template>
-  <section class="app-hero" aria-labelledby="hero-title">
+  <section class="app-hero" :class="[`app-hero--${themeId}`]" aria-labelledby="hero-title">
     <header class="app-hero__intro">
+      <PhotoSlot
+        v-if="themeId === 'fotografico'"
+        photo-key="portrait"
+        variant="round"
+        class="app-hero__portrait"
+      />
       <h1 id="hero-title" class="app-hero__title">Trayectoria profesional</h1>
       <p class="app-hero__lead">
-        Recorrido cronológico de roles y experiencias. Los datos son placeholders hasta
-        completar la biografía.
+        Biografía cronológica a partir del inventario de formación y experiencia. Informance en
+        cuatro etapas (prácticas/EPSAR → UV → RECAPA → CHGUV+OVICE); el resto aparece de forma
+        más compacta. Las fechas sin volcar no se inventan.
       </p>
     </header>
 
-    <Timeline :value="timeline" align="left" class="app-hero__timeline">
-      <template #marker="slotProps">
-        <span
-          class="app-hero__marker"
-          :aria-label="`Entrada: ${slotProps.item.period}`"
-        />
-      </template>
-      <template #content="slotProps">
-        <article class="app-hero__entry">
-          <time class="app-hero__period" :datetime="slotProps.item.period">
-            {{ slotProps.item.period }}
-          </time>
-          <h2 class="app-hero__role">
-            {{ slotProps.item.role }}
-            <span class="app-hero__company">· {{ slotProps.item.company }}</span>
-          </h2>
-          <p class="app-hero__text">{{ slotProps.item.text }}</p>
-        </article>
-      </template>
-    </Timeline>
+    <div
+      class="app-hero__entries"
+      :class="{ 'app-hero__timeline-line': useTimelineRail }"
+    >
+      <TimelineBlock v-for="item in timeline" :key="item.id" :item="item" />
+    </div>
   </section>
 </template>
 
@@ -44,56 +45,16 @@ import { timeline } from '@/data/timeline.js'
 
 .app-hero__title {
   margin: 0 0 0.5rem;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: inherit;
   letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .app-hero__lead {
   margin: 0;
-  max-width: 42rem;
-  color: var(--p-text-muted-color);
-}
-
-.app-hero__timeline {
-  margin-top: 0.5rem;
-}
-
-.app-hero__marker {
-  display: block;
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-  background: var(--p-primary-color);
-  box-shadow: 0 0 0 3px var(--p-primary-100);
-}
-
-.app-hero__entry {
-  padding-bottom: 0.5rem;
-}
-
-.app-hero__period {
-  display: block;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--p-primary-color);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.app-hero__role {
-  margin: 0.35rem 0 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.app-hero__company {
-  font-weight: 500;
-  color: var(--p-text-muted-color);
-}
-
-.app-hero__text {
-  margin: 0;
-  color: var(--p-text-color);
+  max-width: var(--jo-text-max, 42rem);
+  color: var(--jo-muted, var(--p-text-muted-color));
+  line-height: 1.55;
 }
 </style>
