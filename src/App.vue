@@ -2,9 +2,6 @@
 import AppFooter from './components/AppFooter.vue'
 import AppHeader from './components/AppHeader.vue'
 import AppHero from './components/AppHero.vue'
-import { useTheme } from './composables/useTheme.js'
-
-useTheme()
 </script>
 
 <template>

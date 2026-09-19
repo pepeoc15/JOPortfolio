@@ -1,20 +1,11 @@
 <script setup>
-import { computed } from 'vue'
-
-import { useTheme } from '@/composables/useTheme.js'
 import { timeline } from '@/data/timeline.js'
 
 import TimelineBlock from './TimelineBlock.vue'
-
-const { themeId } = useTheme()
-
-const themesWithTimelineRail = ['profesional', 'consultora', 'compacto']
-
-const useTimelineRail = computed(() => themesWithTimelineRail.includes(themeId.value))
 </script>
 
 <template>
-  <section class="app-hero" :class="[`app-hero--${themeId}`]" aria-labelledby="hero-title">
+  <section class="app-hero" aria-labelledby="hero-title">
     <header class="app-hero__intro">
       <h1 id="hero-title" class="app-hero__title">Trayectoria profesional</h1>
       <p class="app-hero__lead">
@@ -24,10 +15,7 @@ const useTimelineRail = computed(() => themesWithTimelineRail.includes(themeId.v
       </p>
     </header>
 
-    <div
-      class="app-hero__entries"
-      :class="{ 'app-hero__timeline-line': useTimelineRail }"
-    >
+    <div class="app-hero__entries app-hero__timeline-line">
       <TimelineBlock v-for="item in timeline" :key="item.id" :item="item" />
     </div>
   </section>
