@@ -10,7 +10,7 @@ import {
   profile,
 } from '@/data/clients.js'
 
-import ClientCard from './ClientCard.vue'
+import ClientCardsViewer from './ClientCardsViewer.vue'
 import CompactBlock from './CompactBlock.vue'
 import PhotoSlot from './PhotoSlot.vue'
 
@@ -70,9 +70,7 @@ const earlierJobItems = earlierJobs.map((job) => ({
         Cada ficha es un cliente. Datadec es el puesto actual (volcado pendiente). CHGUV y OVICE
         coincidieron en el calendario; no es un relevo.
       </p>
-      <div class="app-hero__cards">
-        <ClientCard v-for="card in clientCards" :key="card.id" :card="card" />
-      </div>
+      <ClientCardsViewer :cards="clientCards" />
     </section>
 
     <CompactBlock

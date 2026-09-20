@@ -25,7 +25,7 @@ npm run preview
 ## Estructura (v1)
 
 - `AppHeader` — marca / nombre
-- `AppHero` — producto TACTICA y fichas de cliente (`src/data/clients.js`)
+- `AppHero` — producto TACTICA y fichas de cliente en tabs (`src/data/clients.js`)
 - `AppFooter` — copyright y huecos para redes
 
 Sin router ni Pinia. Sin `<style>` en componentes. Tema **Nora** (PrimeVue). `src/styles/primevue-document.css` engancha el HTML a las variables `--p-*`.
