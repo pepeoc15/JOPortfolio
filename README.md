@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Abre la URL que muestra Vite (por defecto `http://localhost:5173`).
+Abre la URL que muestra Vite (por defecto `http://localhost:5173`). En desarrollo aparece Vue DevTools (botón flotante) para inspeccionar componentes. No se incluye en el build de producción.
 
 ## Build
 
