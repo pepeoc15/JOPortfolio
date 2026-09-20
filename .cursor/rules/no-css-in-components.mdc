@@ -5,10 +5,11 @@ alwaysApply: true
 
 # Sin CSS en componentes
 
-Hasta que Jose lo quite o lo cambie, el portfolio es estructura Vue + datos. No se añade CSS propio.
+Hasta que Jose lo quite o lo cambie, no se añade CSS **nuestro**. El de PrimeVue sí.
 
 - No pongas bloques `<style>` (ni scoped ni globales) en los `.vue`.
-- No crees hojas en `src/styles/` ni enlacés CSS extra en `index.html` o `main.js`.
+- No crees `src/styles/` ni hojas extra en `index.html`.
 - Las clases en el markup se pueden dejar como gancho; no llevan reglas.
-- PrimeVue (Aura) y `primeicons` sí pueden seguir: son CSS de librería, no del proyecto.
-- Si un cambio “necesita” estilo para verse bien, no lo añadas: deja el HTML semántico y coméntalo. Cuando toque implementar CSS, se elimina o se modifica esta regla.
+- En `main.js` sí: `import Aura from '@primeuix/themes/aura'`, el preset en `app.use(PrimeVue, { theme: { preset: Aura } })` y `primeicons`. No lo quites.
+- Aura no se copia a `src/`. Está en `node_modules/@primeuix/themes/dist/aura` (y `node_modules/@primevue/themes/aura` si el paquete viejo sigue instalado). Son tokens JS; PrimeVue genera el CSS al arrancar.
+- Si un cambio “necesita” estilo nuestro, no lo añadas. Cuando toque CSS del proyecto, se elimina o se modifica esta regla.

@@ -28,4 +28,4 @@ npm run preview
 - `AppHero` — producto TACTICA y fichas de cliente (`src/data/clients.js`)
 - `AppFooter` — copyright y huecos para redes
 
-Sin router ni Pinia en esta versión. Sin CSS propio: solo markup Vue y el tema de PrimeVue.
+Sin router ni Pinia en esta versión. Sin `<style>` en componentes. El tema Aura de PrimeVue se carga en `src/main.js` desde `@primeuix/themes/aura` (archivos en `node_modules/@primeuix/themes/dist/aura`, no en `src/`).
