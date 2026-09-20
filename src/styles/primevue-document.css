@@ -1,0 +1,91 @@
+/* Solo tokens de PrimeVue (--p-*). Sin paleta propia.
+   Aura/Lara/Material/Nora pintan componentes; el documento no, si no se engancha. */
+
+html {
+  font-size: 16px;
+}
+
+body,
+#app,
+.app-shell {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--p-font-family), system-ui, sans-serif;
+  color: var(--p-text-color);
+  background: var(--p-surface-ground, var(--p-surface-50));
+}
+
+.app-main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.app-hero,
+.app-hero__cards,
+.app-hero__clients {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 800px) {
+  .app-hero__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.app-header {
+  background: var(--p-content-background);
+  border-bottom: 1px solid var(--p-content-border-color);
+}
+
+.app-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+}
+
+.app-header__name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.app-header__tag {
+  margin: 0.15rem 0 0;
+  color: var(--p-text-muted-color);
+  font-size: 0.875rem;
+}
+
+.app-footer {
+  background: var(--p-content-background);
+  border-top: 1px solid var(--p-content-border-color);
+}
+
+.app-footer__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  color: var(--p-text-muted-color);
+}
+
+h1,
+h2,
+h3 {
+  font-family: inherit;
+  color: var(--p-text-color);
+}
+
+a {
+  color: var(--p-primary-color);
+}
+
+.p-card {
+  border: 1px solid var(--p-content-border-color);
+}

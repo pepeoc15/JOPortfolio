@@ -5,11 +5,11 @@ alwaysApply: true
 
 # Sin CSS en componentes
 
-Hasta que Jose lo quite o lo cambie, no se añade CSS **nuestro**. El de PrimeVue sí.
+Hasta que Jose lo quite o lo cambie, no se añade CSS **de diseño propio** en los `.vue`.
 
 - No pongas bloques `<style>` (ni scoped ni globales) en los `.vue`.
-- No crees `src/styles/` ni hojas extra en `index.html`.
-- Las clases en el markup se pueden dejar como gancho; no llevan reglas.
-- En `main.js` sí: `import Aura from '@primeuix/themes/aura'` (paquete `@primeuix/themes` **v2**, compatible con PrimeVue 4). El preset y `primeicons` no se quitan. No uses `@primeuix/themes` v3: no inyecta el CSS en PrimeVue 4.
-- Aura no se copia a `src/`. Está en `node_modules/@primeuix/themes/dist/aura` (y `node_modules/@primevue/themes/aura` si el paquete viejo sigue instalado). Son tokens JS; PrimeVue genera el CSS al arrancar.
-- Si un cambio “necesita” estilo nuestro, no lo añadas. Cuando toque CSS del proyecto, se elimina o se modifica esta regla.
+- En `main.js` sí: Aura (`@primeuix/themes` **v2**), `primeicons`, y `src/styles/primevue-document.css`.
+- `primevue-document.css` solo puede usar variables `--p-*` de PrimeVue (fuente, color, fondo, borde). Así el documento entero cambia al cambiar Aura/Lara/Material/Nora. No inventes hex ni fuentes propias.
+- No uses `@primeuix/themes` v3 con PrimeVue 4: no inyecta el CSS.
+- Aura está en `node_modules/@primeuix/themes/dist/aura`. No se copia a `src/`.
+- Si hace falta CSS nuestro de verdad (layout de autor, no tokens), se cambia esta regla.
