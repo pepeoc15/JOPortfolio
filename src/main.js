@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import PrimeVue from 'primevue/config'
-import Aura from '@primeuix/themes/aura'
+import Nora from '@primeuix/themes/nora'
 
 import App from './App.vue'
 
@@ -11,7 +11,7 @@ const app = createApp(App)
 
 app.use(PrimeVue, {
   theme: {
-    preset: Aura,
+    preset: Nora,
     options: {
       darkModeSelector: false,
     },

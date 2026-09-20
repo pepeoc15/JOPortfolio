@@ -28,4 +28,4 @@ npm run preview
 - `AppHero` — producto TACTICA y fichas de cliente (`src/data/clients.js`)
 - `AppFooter` — copyright y huecos para redes
 
-Sin router ni Pinia. Sin `<style>` en componentes. Aura/Lara/Material/Nora vía PrimeVue; `src/styles/primevue-document.css` engancha el HTML a las variables `--p-*` para que el documento entero cambie de preset.
+Sin router ni Pinia. Sin `<style>` en componentes. Tema **Nora** (PrimeVue). `src/styles/primevue-document.css` engancha el HTML a las variables `--p-*`.
