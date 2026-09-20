@@ -13,7 +13,7 @@
   --jo-title-weight: 600;
   --jo-period-size: 0.75rem;
   --jo-text-max: 42rem;
-  --jo-main-max: 56rem;
+  --jo-main-max: 64rem;
   --jo-main-padding: 2rem 1.25rem 3rem;
   --jo-stage-photo-col: minmax(8rem, 10rem) 1fr;
   --jo-photo-bg: #e8edf2;
@@ -52,18 +52,6 @@ body {
   border-bottom: 1px solid var(--jo-border);
   background: var(--jo-header-bg);
   backdrop-filter: blur(8px);
-}
-
-.app-hero__entries {
-  display: flex;
-  flex-direction: column;
-  gap: var(--jo-entry-gap);
-}
-
-.app-hero__timeline-line {
-  border-left: 2px solid var(--jo-border);
-  margin-left: 0.35rem;
-  padding-left: 1.25rem;
 }
 
 .app-footer {

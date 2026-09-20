@@ -25,7 +25,7 @@ npm run preview
 ## Estructura (v1)
 
 - `AppHeader` — marca / nombre
-- `AppHero` — biografía profesional como timeline (`src/data/timeline.js`)
+- `AppHero` — producto TACTICA y fichas de cliente (`src/data/clients.js`)
 - `AppFooter` — copyright y huecos para redes
 
 Sin router ni Pinia en esta versión.
