@@ -10,6 +10,6 @@ Hasta que Jose lo quite o lo cambie, no se añade CSS **nuestro**. El de PrimeVu
 - No pongas bloques `<style>` (ni scoped ni globales) en los `.vue`.
 - No crees `src/styles/` ni hojas extra en `index.html`.
 - Las clases en el markup se pueden dejar como gancho; no llevan reglas.
-- En `main.js` sí: `import Aura from '@primeuix/themes/aura'`, el preset en `app.use(PrimeVue, { theme: { preset: Aura } })` y `primeicons`. No lo quites.
+- En `main.js` sí: `import Aura from '@primeuix/themes/aura'` (paquete `@primeuix/themes` **v2**, compatible con PrimeVue 4). El preset y `primeicons` no se quitan. No uses `@primeuix/themes` v3: no inyecta el CSS en PrimeVue 4.
 - Aura no se copia a `src/`. Está en `node_modules/@primeuix/themes/dist/aura` (y `node_modules/@primevue/themes/aura` si el paquete viejo sigue instalado). Son tokens JS; PrimeVue genera el CSS al arrancar.
 - Si un cambio “necesita” estilo nuestro, no lo añadas. Cuando toque CSS del proyecto, se elimina o se modifica esta regla.

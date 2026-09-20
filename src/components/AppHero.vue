@@ -1,4 +1,6 @@
 <script setup>
+import Card from 'primevue/card'
+
 import {
   anchorEducation,
   clientCards,
@@ -43,22 +45,24 @@ const earlierJobItems = earlierJobs.map((job) => ({
       <p class="app-hero__lead">{{ profile.lead }}</p>
     </header>
 
-    <section class="product-intro" aria-labelledby="product-title">
-      <PhotoSlot
-        :photo-key="productIntro.photoKey"
-        variant="thumb"
-        class="product-intro__photo"
-      />
-      <div>
-        <p class="product-intro__meta">{{ productIntro.role }} · {{ productIntro.name }}</p>
-        <h2 id="product-title" class="product-intro__title">{{ productIntro.title }}</h2>
+    <Card class="product-intro">
+      <template #title>
+        <span id="product-title">{{ productIntro.title }}</span>
+      </template>
+      <template #subtitle>{{ productIntro.role }} · {{ productIntro.name }}</template>
+      <template #content>
+        <PhotoSlot
+          :photo-key="productIntro.photoKey"
+          variant="thumb"
+          class="product-intro__photo"
+        />
         <p class="product-intro__period">{{ productIntro.period }}</p>
         <p class="product-intro__contracts">{{ productIntro.contracts }}</p>
         <p v-for="(paragraph, idx) in productIntro.paragraphs" :key="idx" class="product-intro__text">
           {{ paragraph }}
         </p>
-      </div>
-    </section>
+      </template>
+    </Card>
 
     <section class="app-hero__clients" aria-labelledby="clients-title">
       <h2 id="clients-title" class="app-hero__section-title">Fichas de cliente</h2>
